@@ -12,14 +12,11 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gui.SetActive(true);        
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void LateUpdate()
@@ -28,11 +25,7 @@ public class CameraScript : MonoBehaviour
         {
             float oldZ = transform.position.z;
             transform.position = Vector3.Lerp(transform.position, target.position + target_Offset, 0.05f);
-
             transform.position = new Vector3( transform.position.x, transform.position.y, oldZ );
-
-         
-
         }
 
     }

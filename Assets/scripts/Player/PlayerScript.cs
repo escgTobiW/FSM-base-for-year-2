@@ -80,7 +80,6 @@ namespace Player
         public void Update()
         {
             sm.CurrentState.HandleInput();
-
             sm.CurrentState.LogicUpdate();
 
             //output debug info to the canvas
@@ -109,10 +108,7 @@ namespace Player
             onPlatform = col.PlatformHit();
             col.ShowDebugCollisionPoints();
 
-            
-
             sm.CurrentState.PhysicsUpdate();
-
             rb.velocity = new Vector2(xv, yv);
         }
 

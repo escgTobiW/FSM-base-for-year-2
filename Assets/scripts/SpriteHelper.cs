@@ -15,14 +15,12 @@ public class SpriteHelper : MonoBehaviour
     }
     private void Start()
     {
-        print("sprite helper awake");
     }
 
     public void SetSpriteXDirection(Dir dir)
     {
         
         // flipX == true makes sprite face left
-        //transform.localScale = new Vector2(dir == Dir.Left ? -6 : 6, transform.localScale.y);
         directionX = dir;
 
         sr.flipX = (dir == Dir.Left);
@@ -107,17 +105,6 @@ public class SpriteHelper : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
-
-    /*
-    public Dir GetPlayerSide( GameObject obj)
-    {
-        if( LevelManager.lm.playerGameObject.transform.position.x < obj.transform.position.x )
-        {
-            return Dir.Left;
-        }
-        return Dir.Right;
-    }
-    */
 
     public void ZeroVelocity(Rigidbody2D rb)
     {
