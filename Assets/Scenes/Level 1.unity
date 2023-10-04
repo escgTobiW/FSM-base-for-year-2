@@ -7747,7 +7747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97987055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.35, y: 5.08, z: 0}
+  m_LocalPosition: {x: -11.35, y: 2.92, z: 0}
   m_LocalScale: {x: 5.1, y: 5.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7767,26 +7767,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  sh: {fileID: 0}
-  platformLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  jumpFlag: 0
-  jumpButtonPressed: 0
-  jumpButtonReleased: 0
-  shootButtonPressed: 0
-  shootButtonReleased: 0
-  crouchButtonPressed: 0
-  crouchButtonReleased: 0
-  upButtonPressed: 0
-  downButtonPressed: 0
-  fall: 0.1
-  jumpGravity: 0.84
-  initialJumpVel: 14.5
   xv: 0
   yv: 0
-  lanceWeapon: {fileID: 163567086286244553, guid: 24649323d33408c429890841e5734b10, type: 3}
   runSpeed: 6
   sm: {fileID: 0}
 --- !u!50 &97987060
@@ -7797,7 +7779,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97987055}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0

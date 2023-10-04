@@ -25,7 +25,6 @@ namespace Player
 
         public virtual void HandleInput()
         {
-            player.ReadInputKeys();
         }
 
         public virtual void LogicUpdate()
