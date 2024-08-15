@@ -13,8 +13,6 @@ namespace Player
         public override void Enter()
         {
             base.Enter();
-            player.xv = player.runSpeed;
-
         }
 
         public override void Exit()
@@ -30,7 +28,8 @@ namespace Player
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            player.CheckForStand();
+            player.CheckForIdle();
+            Debug.Log("checking for idle");
         }
 
         public override void PhysicsUpdate()

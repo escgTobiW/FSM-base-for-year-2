@@ -56,7 +56,7 @@ public class UIscript : MonoBehaviour
 
         // define debug text area
         GUILayout.BeginArea(new Rect(10f, 10f, 1600f, 1600f));
-        GUILayout.Label($"<color='white'><size=18>{text}</size></color>");
+        GUILayout.Label($"<size=18>{text}</size></color>");
         GUILayout.EndArea();
 
 

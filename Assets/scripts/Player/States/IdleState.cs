@@ -2,19 +2,16 @@
 using UnityEngine;
 namespace Player
 {
-    public class StandingState : State
+    public class IdleState : State
     {
-
-
         // constructor
-        public StandingState(PlayerScript player, StateMachine sm) : base(player, sm)
+        public IdleState(PlayerScript player, StateMachine sm) : base(player, sm)
         {
         }
 
         public override void Enter()
         {
             base.Enter();
-            player.xv = player.yv = 0;
         }
 
         public override void Exit()
@@ -30,7 +27,7 @@ namespace Player
         public override void LogicUpdate()
         {
             player.CheckForRun();
-
+            Debug.Log("checking for run");
             base.LogicUpdate();
         }
 
