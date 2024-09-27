@@ -16,6 +16,7 @@ namespace Player
            
             base.Enter();
             player.anim.Play("playerRUN", 0, 0);
+
         }
 
         public override void Exit()
@@ -34,15 +35,18 @@ namespace Player
             player.CheckForIdle();
             Debug.Log("checking for idle");
 
-            
-            if (player.sprite.flipX == false && (Input.GetKey("left") || Input.GetKey("a"))) 
+            if (Input.GetKey("left") || Input.GetKey("a"))
             {
-               player.sprite.flipX = true;
+                //move left
+                player.sprite.flipX = true;
+                Debug.Log("GOING LEFT!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
-            else if (player.sprite.flipX == true && (Input.GetKey("right") || Input.GetKey("d")))
+            else if (Input.GetKey("right") || Input.GetKey("d"))
             {
+                //move right
                 player.sprite.flipX = false;
             }
+
         }
 
         public override void PhysicsUpdate()
