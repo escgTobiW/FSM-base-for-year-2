@@ -20,6 +20,7 @@ namespace Player
 
             base.Enter();
             player.anim.Play("playerJUMP", 0, 0);
+            // send player upwards
 
         }
 
@@ -38,10 +39,11 @@ namespace Player
             base.LogicUpdate();
             player.CheckForIdle();
             Debug.Log("checking for idle");
+
             player.CheckForRun();
             Debug.Log("checking for run");
 
-
+            // check for death here
 
         }
 

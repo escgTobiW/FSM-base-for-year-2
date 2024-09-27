@@ -35,6 +35,9 @@ namespace Player
             player.CheckForIdle();
             Debug.Log("checking for idle");
 
+            player.CheckForJump();
+            Debug.Log("checking for jump");
+
             if (Input.GetKey("left") || Input.GetKey("a"))
             {
                 //move left

@@ -29,6 +29,10 @@ namespace Player
         {
             player.CheckForRun();
             Debug.Log("checking for run");
+
+            player.CheckForJump();
+            Debug.Log("checking for jump");
+
             base.LogicUpdate();
         }
 

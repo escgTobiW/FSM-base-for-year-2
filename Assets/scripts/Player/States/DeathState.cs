@@ -33,14 +33,7 @@ namespace Player
 
         public override void LogicUpdate()
         {
-            base.LogicUpdate();
-            player.CheckForIdle();
-            Debug.Log("checking for idle");
-            player.CheckForRun();
-            Debug.Log("checking for run");
-
-
-
+            base.LogicUpdate(); 
         }
 
         public override void PhysicsUpdate()

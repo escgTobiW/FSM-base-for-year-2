@@ -20,6 +20,7 @@ namespace Player
         // variables holding the different player states
         public IdleState idleState;
         public RunningState runningState;
+        public JumpState jumpState;
 
         public StateMachine sm;
 
@@ -46,7 +47,13 @@ namespace Player
         // Update is called once per frame
         public void Update()
         {
-            sm.CurrentState.LogicUpdate();
+            sm.CurrentState.LogicUpdate(); 
+            /*
+             ISSUE HERE APPARENTLY??????
+            "Object reference not set to an instance of an object"
+            Only causes problems after jump button pressed
+            all following text does not display on screen, and states can no longer be changed
+             */
 
             //output debug info to the canvas
             string s;
@@ -93,6 +100,15 @@ namespace Player
 
         }
 
+        public void CheckForJump()
+        {
+            if (Input.GetKey("space")) 
+            {
+                sm.ChangeState(jumpState); //change to jump state 
+                return;
+            }
+
+        }
 
 
     }
