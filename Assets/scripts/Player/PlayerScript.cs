@@ -8,10 +8,14 @@ namespace Player
 {
 
 
+
     public class PlayerScript : MonoBehaviour
     {
         public Rigidbody2D rb;
-        
+
+        public Animator anim;
+        public SpriteRenderer sprite;
+
 
         // variables holding the different player states
         public IdleState idleState;
@@ -25,6 +29,10 @@ namespace Player
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+
+            anim = GetComponent<Animator>();
+            sprite = GetComponent<SpriteRenderer>();
+
             sm = gameObject.AddComponent<StateMachine>();
 
             // add new states here
@@ -46,7 +54,7 @@ namespace Player
 
             UIscript.ui.DrawText(s);
 
-            UIscript.ui.DrawText("Press I for idle / R for run");
+            UIscript.ui.DrawText("Press arrow keys for run");
 
         }
 
@@ -61,7 +69,7 @@ namespace Player
 
         public void CheckForRun()
         {
-            if (Input.GetKey("r")) // key held down
+            if (Input.GetKey("left") || Input.GetKey("right") || Input.GetKey("a") || Input.GetKey("d")) // key held down
             {
                 sm.ChangeState(runningState);
                 return;
@@ -72,7 +80,13 @@ namespace Player
 
         public void CheckForIdle()
         {
+            /*
             if (Input.GetKey("i") ) // key held down
+            {
+                sm.ChangeState(idleState);
+            }
+            */
+            if (!Input.anyKey)
             {
                 sm.ChangeState(idleState);
             }

@@ -12,6 +12,7 @@ namespace Player
         public override void Enter()
         {
             base.Enter();
+            player.anim.Play("arthur_stand", 0, 0);
         }
 
         public override void Exit()
