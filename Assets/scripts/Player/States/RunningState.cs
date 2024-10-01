@@ -16,6 +16,7 @@ namespace Player
            
             base.Enter();
             player.anim.Play("playerRUN", 0, 0);
+            
 
         }
 
@@ -33,10 +34,10 @@ namespace Player
         {
             base.LogicUpdate();
             player.CheckForIdle();
-            Debug.Log("checking for idle");
+            //Debug.Log("checking for idle");
 
             player.CheckForJump();
-            Debug.Log("checking for jump");
+            //Debug.Log("checking for jump");
 
             if (Input.GetKey("left") || Input.GetKey("a"))
             {
@@ -49,6 +50,8 @@ namespace Player
                 //move right
                 player.sprite.flipX = false;
             }
+
+            player.rb.velocity = new Vector2(2, 0);
 
         }
 

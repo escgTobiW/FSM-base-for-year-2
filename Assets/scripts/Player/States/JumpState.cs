@@ -17,9 +17,9 @@ namespace Player
 
         public override void Enter()
         {
-
             base.Enter();
             player.anim.Play("playerJUMP", 0, 0);
+            player.rb.AddForce(player.rb.transform.up * 8, ForceMode2D.Impulse);
             // send player upwards
 
         }
@@ -37,11 +37,13 @@ namespace Player
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            player.CheckForIdle();
-            Debug.Log("checking for idle");
 
-            player.CheckForRun();
-            Debug.Log("checking for run");
+            player.CheckForLanding();
+            //player.CheckForIdle();
+            //Debug.Log("checking for idle");
+
+            //player.CheckForRun();
+            //Debug.Log("checking for run");
 
             // check for death here
 

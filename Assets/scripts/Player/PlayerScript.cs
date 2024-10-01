@@ -23,6 +23,7 @@ namespace Player
         public JumpState jumpState;
 
         public StateMachine sm;
+        bool isGrounded;
 
 
 
@@ -39,6 +40,8 @@ namespace Player
             // add new states here
             idleState = new IdleState(this, sm);
             runningState = new RunningState(this, sm);
+            jumpState = new JumpState(this, sm);
+            isGrounded = false;
 
             // initialise the statemachine with the default state
             sm.Init(idleState);
@@ -54,6 +57,7 @@ namespace Player
             Only causes problems after jump button pressed
             all following text does not display on screen, and states can no longer be changed
              */
+
 
             //output debug info to the canvas
             string s;
@@ -102,13 +106,41 @@ namespace Player
 
         public void CheckForJump()
         {
-            if (Input.GetKey("space")) 
+            //print("isgrounded=" + isGrounded);
+            if (Input.GetKey("space") && isGrounded ) 
             {
                 sm.ChangeState(jumpState); //change to jump state 
+                
                 return;
             }
 
         }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if( collision.gameObject.tag == "Ground")
+            {
+                isGrounded = true;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Ground")
+            {
+                isGrounded = false;
+            }
+        }
+
+
+        public void CheckForLanding()
+        {
+            if( isGrounded && rb.velocity.y <= 0 )
+            {
+                sm.ChangeState(idleState);
+            }
+        }
+
 
 
     }

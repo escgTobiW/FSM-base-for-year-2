@@ -28,10 +28,10 @@ namespace Player
         public override void LogicUpdate()
         {
             player.CheckForRun();
-            Debug.Log("checking for run");
+            //Debug.Log("checking for run");
 
             player.CheckForJump();
-            Debug.Log("checking for jump");
+            //Debug.Log("checking for jump");
 
             base.LogicUpdate();
         }
